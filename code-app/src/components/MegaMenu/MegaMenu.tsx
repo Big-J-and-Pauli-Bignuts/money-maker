@@ -209,6 +209,7 @@ const MegaMenu: FC<MegaMenuProps> = ({
     { id: '3', title: 'Tasks', url: '/tasks', order: 3 },
     { id: '4', title: 'Documents', url: '/documents', order: 4 },
     { id: '5', title: 'Settings', url: '/settings', order: 5 },
+    { id: '6', title: 'Admin', url: '/admin', order: 6 },
   ];
 
   const getTopLevelItems = () => menuItems.filter(item => !item.parentId);

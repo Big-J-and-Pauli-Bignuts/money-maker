@@ -9,6 +9,11 @@ import Tasks from './pages/Tasks';
 import Documents from './pages/Documents';
 import Settings from './pages/Settings';
 import Login from './pages/Login';
+import AdminDashboard from './pages/admin/AdminDashboard';
+import UIConfig from './pages/admin/UIConfig';
+import NavigationConfig from './pages/admin/NavigationConfig';
+import SharePointAdmin from './pages/admin/SharePointAdmin';
+import DataverseAdmin from './pages/admin/DataverseAdmin';
 import { loginRequest } from './services/auth';
 
 const ProtectedRoute: FC<{ children: React.ReactNode }> = ({ children }) => {
@@ -86,6 +91,11 @@ const AppRoutes: FC = () => {
         <Route path="tasks" element={<Tasks />} />
         <Route path="documents" element={<Documents />} />
         <Route path="settings" element={<Settings />} />
+        <Route path="admin" element={<AdminDashboard />} />
+        <Route path="admin/ui-config" element={<UIConfig />} />
+        <Route path="admin/navigation" element={<NavigationConfig />} />
+        <Route path="admin/sharepoint" element={<SharePointAdmin />} />
+        <Route path="admin/dataverse" element={<DataverseAdmin />} />
       </Route>
       <Route path="*" element={<Navigate to="/" />} />
     </Routes>

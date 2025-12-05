@@ -21,8 +21,8 @@
   },
   "globalHeaders": {
     "X-Content-Type-Options": "nosniff",
-    "X-Frame-Options": "DENY",
-    "Content-Security-Policy": "default-src 'self' 'unsafe-inline' 'unsafe-eval' https://*.microsoftonline.com https://*.microsoft.com https://*.sharepoint.com https://*.dynamics.com https://graph.microsoft.com https://*.azure.com; img-src 'self' data: https:; font-src 'self' data: https://res-1.cdn.office.net;"
+    "X-Frame-Options": "ALLOW-FROM https://login.microsoftonline.com",
+    "Content-Security-Policy": "default-src 'self' 'unsafe-inline' 'unsafe-eval' https://*.microsoftonline.com https://*.microsoft.com https://*.sharepoint.com https://*.dynamics.com https://graph.microsoft.com https://*.azure.com https://*.azurestaticapps.net; img-src 'self' data: https:; font-src 'self' data: https://res-1.cdn.office.net; frame-ancestors 'self' https://*.microsoftonline.com https://login.microsoftonline.com;"
   },
   "mimeTypes": {
     ".json": "application/json",
