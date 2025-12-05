@@ -17,6 +17,8 @@ const App: FC = () => {
         const response = await msalInstance.handleRedirectPromise();
         if (response) {
           console.log('SSO successful:', response.account);
+          // Clean up the URL by removing the hash after successful authentication
+          window.history.replaceState({}, document.title, window.location.pathname);
         }
         setIsInitialized(true);
       } catch (error) {
