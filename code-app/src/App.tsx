@@ -6,6 +6,8 @@ import { EventType } from '@azure/msal-browser';
 import { msalInstance, initializeMsal } from './services/auth';
 import AppRoutes from './routes';
 
+// Force rebuild - CSP updated for Microsoft OAuth
+
 const App: FC = () => {
   const [isInitialized, setIsInitialized] = useState(false);
 
