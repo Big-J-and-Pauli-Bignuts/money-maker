@@ -1,0 +1,369 @@
+.sharepoint-page,
+.dataverse-page {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.page-header {
+  margin-bottom: 30px;
+}
+
+.page-header h1 {
+  font-size: 1.8rem;
+  color: #1a1a2e;
+  margin: 0 0 8px 0;
+}
+
+.page-header p {
+  color: #666;
+  margin: 0;
+}
+
+/* Auth Prompt */
+.auth-prompt {
+  background: linear-gradient(135deg, rgba(0, 212, 255, 0.1), rgba(124, 58, 237, 0.1));
+  border: 1px solid rgba(124, 58, 237, 0.2);
+  border-radius: 12px;
+  padding: 25px;
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.auth-prompt p {
+  margin: 0 0 15px 0;
+  color: #333;
+}
+
+.demo-note {
+  font-size: 0.85rem;
+  color: #666;
+  margin-top: 15px !important;
+  font-style: italic;
+}
+
+.sign-in-btn {
+  background: linear-gradient(90deg, #00d4ff, #7c3aed);
+  border: none;
+  color: #ffffff;
+  padding: 12px 30px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.sign-in-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(0, 212, 255, 0.4);
+}
+
+/* Search Bar */
+.search-bar {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.search-bar input {
+  flex: 1;
+  padding: 12px 18px;
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.search-bar input:focus {
+  border-color: #7c3aed;
+}
+
+.search-bar button {
+  background: linear-gradient(90deg, #00d4ff, #7c3aed);
+  border: none;
+  color: #ffffff;
+  padding: 12px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: transform 0.2s ease;
+}
+
+.search-bar button:hover:not(:disabled) {
+  transform: translateY(-1px);
+}
+
+.search-bar button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.refresh-btn {
+  background: #f0f0f0 !important;
+  color: #333 !important;
+}
+
+.refresh-btn:hover:not(:disabled) {
+  background: #e0e0e0 !important;
+}
+
+/* Breadcrumb */
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 20px;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.breadcrumb-item.clickable {
+  cursor: pointer;
+  color: #7c3aed;
+}
+
+.breadcrumb-item.clickable:hover {
+  text-decoration: underline;
+}
+
+.breadcrumb-separator {
+  color: #ccc;
+}
+
+/* Error Message */
+.error-message {
+  background: rgba(239, 68, 68, 0.1);
+  border: 1px solid rgba(239, 68, 68, 0.2);
+  border-radius: 10px;
+  padding: 15px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #dc2626;
+}
+
+.error-message.info {
+  background: rgba(0, 212, 255, 0.1);
+  border-color: rgba(0, 212, 255, 0.2);
+  color: #0891b2;
+}
+
+/* Loading */
+.loading {
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.spinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid #e0e0e0;
+  border-top-color: #7c3aed;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin: 0 auto 15px;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Items Grid (SharePoint) */
+.items-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 15px;
+}
+
+.item-card {
+  background: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.item-card:hover {
+  border-color: #7c3aed;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  transform: translateY(-2px);
+}
+
+.item-card.folder {
+  background: rgba(0, 212, 255, 0.03);
+}
+
+.item-icon {
+  font-size: 2rem;
+  flex-shrink: 0;
+}
+
+.item-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.item-name {
+  font-weight: 600;
+  color: #1a1a2e;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.item-meta {
+  font-size: 0.8rem;
+  color: #888;
+  margin-top: 4px;
+}
+
+/* Entity Tabs (Dataverse) */
+.entity-tabs {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.entity-tab {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #ffffff;
+  border: 1px solid #e0e0e0;
+  color: #666;
+  padding: 10px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.entity-tab:hover {
+  border-color: #7c3aed;
+  color: #7c3aed;
+}
+
+.entity-tab.active {
+  background: linear-gradient(90deg, #00d4ff, #7c3aed);
+  border-color: transparent;
+  color: #ffffff;
+}
+
+.entity-icon {
+  font-size: 1.1rem;
+}
+
+/* Records Table (Dataverse) */
+.records-container {
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+}
+
+.records-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.records-table th,
+.records-table td {
+  padding: 14px 16px;
+  text-align: left;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.records-table th {
+  background: #f9f9f9;
+  font-weight: 600;
+  color: #333;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.records-table tr:hover {
+  background: rgba(124, 58, 237, 0.03);
+}
+
+.records-table td {
+  color: #555;
+  font-size: 0.9rem;
+}
+
+.actions-cell {
+  display: flex;
+  gap: 5px;
+}
+
+.action-btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  padding: 5px;
+  border-radius: 5px;
+  transition: background 0.2s ease;
+}
+
+.action-btn:hover {
+  background: #f0f0f0;
+}
+
+/* Empty State */
+.empty-state {
+  text-align: center;
+  padding: 60px 20px;
+  color: #666;
+}
+
+.empty-state button {
+  margin-top: 15px;
+  background: transparent;
+  border: 2px solid #7c3aed;
+  color: #7c3aed;
+  padding: 10px 24px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.empty-state button:hover {
+  background: #7c3aed;
+  color: #ffffff;
+}
+
+/* Record Count */
+.record-count {
+  padding: 15px 20px;
+  text-align: right;
+  font-size: 0.85rem;
+  color: #888;
+  border-top: 1px solid #f0f0f0;
+  background: #f9f9f9;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .entity-tabs {
+    justify-content: center;
+  }
+
+  .records-container {
+    overflow-x: auto;
+  }
+
+  .records-table {
+    min-width: 600px;
+  }
+}
