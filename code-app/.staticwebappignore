@@ -1,0 +1,36 @@
+# Azure Static Web Apps - Files to ignore during deployment
+# Only deploy the built dist folder
+
+# Dependencies
+node_modules/
+package-lock.json
+
+# Source files (already built into dist)
+src/
+public/
+tests/
+
+# Configuration files
+tsconfig.json
+tsconfig.node.json
+vite.config.ts
+.env
+.env.*
+
+# IDE
+.vscode/
+.idea/
+
+# Git
+.git/
+.gitignore
+
+# Documentation
+*.md
+GETTING_STARTED.md
+README.md
+SSO_SETUP.md
+
+# Other
+.DS_Store
+*.log
