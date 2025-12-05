@@ -15,16 +15,22 @@ const App: FC = () => {
     // Initialize MSAL and handle redirect promise on app load (for SSO)
     const initAuth = async () => {
       try {
+        console.log('[Auth] Initializing MSAL...');
         await initializeMsal();
+        console.log('[Auth] Handling redirect promise...');
         const response = await msalInstance.handleRedirectPromise();
         if (response) {
-          console.log('SSO successful:', response.account);
+          console.log('[Auth] SSO successful:', response.account?.username);
           // Clean up the URL by removing the hash after successful authentication
           window.history.replaceState({}, document.title, window.location.pathname);
+        } else {
+          console.log('[Auth] No redirect response, checking existing accounts...');
+          const accounts = msalInstance.getAllAccounts();
+          console.log('[Auth] Found accounts:', accounts.length);
         }
         setIsInitialized(true);
       } catch (error) {
-        console.error('MSAL initialization or SSO redirect error:', error);
+        console.error('[Auth] MSAL initialization or SSO redirect error:', error);
         setIsInitialized(true); // Still render the app even if there's an error
       }
     };

@@ -31,23 +31,30 @@ const ProtectedRoute: FC<{ children: React.ReactNode }> = ({ children }) => {
     // Try SSO (silent sign-in) before redirecting to login
     const attemptSSO = async () => {
       try {
+        console.log('[SSO] Attempting SSO...');
         const accounts = instance.getAllAccounts();
+        console.log('[SSO] Found accounts:', accounts.length);
+        
         if (accounts.length > 0) {
+          console.log('[SSO] Trying acquireTokenSilent with account:', accounts[0].username);
           // Try to acquire token silently
           await instance.acquireTokenSilent({
             ...loginRequest,
             account: accounts[0],
           });
+          console.log('[SSO] acquireTokenSilent successful');
           setCheckingSSO(false);
           navigate('/'); // Redirect to home after successful SSO
         } else {
+          console.log('[SSO] No cached accounts, trying ssoSilent...');
           // Try SSO by checking if user is signed in to Microsoft
           await instance.ssoSilent(loginRequest);
+          console.log('[SSO] ssoSilent successful');
           setCheckingSSO(false);
           navigate('/');
         }
       } catch (error) {
-        console.log('SSO not available, showing login page', error);
+        console.log('[SSO] SSO not available, showing login page', error);
         setCheckingSSO(false);
         navigate('/login');
       }
