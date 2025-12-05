@@ -14,8 +14,14 @@ const msalConfig: Configuration = {
 
 export const msalInstance = new PublicClientApplication(msalConfig);
 
-// Initialize MSAL
-await msalInstance.initialize();
+// Initialize MSAL (done lazily on first use)
+let msalInitialized = false;
+export const initializeMsal = async () => {
+  if (!msalInitialized) {
+    await msalInstance.initialize();
+    msalInitialized = true;
+  }
+};
 
 // Scopes for API access
 export const loginRequest = {
@@ -40,6 +46,7 @@ export const graphScopes = {
  * Get access token for a specific resource
  */
 export const getAccessToken = async (scopes: string[]): Promise<string> => {
+  await initializeMsal();
   const accounts = msalInstance.getAllAccounts();
   if (accounts.length === 0) {
     throw new Error('No accounts found. Please sign in.');

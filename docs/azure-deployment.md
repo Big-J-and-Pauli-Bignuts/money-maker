@@ -82,7 +82,7 @@ Add the following secrets:
 | `AZURE_STATIC_WEB_APPS_API_TOKEN` | (deployment token from Azure) | Required for deployment |
 | `VITE_TENANT_ID` | `7a5bf294-6ae8-47c4-b0c4-b2f9166d7a3f` | Azure AD Tenant ID |
 | `VITE_CLIENT_ID` | `e71845d1-4e33-499b-b5c5-190cdee961a7` | Azure AD Client ID |
-| `VITE_REDIRECT_URI` | `https://YOUR-APP-NAME.azurestaticapps.net/` | Production redirect URI |
+| `VITE_REDIRECT_URI` | `https://yellow-meadow-0f274e410.1azurestaticapps.net/` | Production redirect URI |
 | `VITE_DATAVERSE_URL` | `https://org05385a1b.crm6.dynamics.com` | Dataverse URL |
 | `VITE_DATAVERSE_API_VERSION` | `9.2` | Dataverse API version |
 | `VITE_SHAREPOINT_SITE_URL` | `https://365evergreen.sharepoint.com` | SharePoint site URL |

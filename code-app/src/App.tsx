@@ -3,19 +3,19 @@ import { BrowserRouter } from 'react-router-dom';
 import { MsalProvider } from '@azure/msal-react';
 import { FluentProvider, webLightTheme } from '@fluentui/react-components';
 import { EventType } from '@azure/msal-browser';
-import { msalInstance } from './services/auth';
+import { msalInstance, initializeMsal } from './services/auth';
 import AppRoutes from './routes';
 
-// Handle redirect promise on app load (for SSO)
-msalInstance
-  .handleRedirectPromise()
+// Initialize MSAL and handle redirect promise on app load (for SSO)
+initializeMsal()
+  .then(() => msalInstance.handleRedirectPromise())
   .then((response) => {
     if (response) {
       console.log('SSO successful:', response.account);
     }
   })
   .catch((error) => {
-    console.error('SSO redirect error:', error);
+    console.error('MSAL initialization or SSO redirect error:', error);
   });
 
 const App: FC = () => {

@@ -28,6 +28,7 @@ export default defineConfig({
   build: {
     outDir: 'dist',
     sourcemap: true,
+    target: 'es2022', // Support top-level await
     rollupOptions: {
       output: {
         manualChunks: {
