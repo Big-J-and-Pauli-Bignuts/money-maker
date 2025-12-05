@@ -24,7 +24,6 @@ import {
   Search24Regular,
   Document24Regular,
   Folder24Regular,
-  ArrowDownload24Regular,
   Open24Regular,
 } from '@fluentui/react-icons';
 import { sharepointClient, SharePointFile } from '../services/sharepoint';
